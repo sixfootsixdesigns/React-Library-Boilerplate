@@ -1,0 +1,80 @@
+{
+  "name": "react-library-boilerplate",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": false,
+  "description": "React Typescript Library Boilerplate",
+  "author": "James Olson",
+  "homepage": "https://github.com/sixfootsixdesigns/React-Library-Boilerplate",
+  "bugs": {
+    "url": "https://github.com/sixfootsixdesigns/React-Library-Boilerplate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sixfootsixdesigns/React-Library-Boilerplate.git"
+  },
+  "scripts": {
+    "dev": "yarn storybook:local",
+    "test": "jest --silent",
+    "test:watch": "jest --watch",
+    "test:update": "jest -u",
+    "storybook:local": "start-storybook -p 9001 -s ./src/assets -c .storybook",
+    "lint": "tslint --project .",
+    "build": "yarn build:setup; rollup -c",
+    "build:setup": "./scripts/build-setup.sh"
+  },
+  "main": "lib.cjs.js",
+  "module": "lib.esm.js",
+  "browser": "lib.umd.js",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-storysource": "^4.1.4",
+    "@storybook/react": "^4.1.4",
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.6",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/storybook__react": "^4.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^8.0.0-beta.6",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "css-loader": "^1.0.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.10.0",
+    "react-test-renderer": "^16.6.3",
+    "react-testing-library": "^5.3.0",
+    "rollup": "^0.68.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-generate-package-json": "^2.1.1",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-typescript2": "^0.18.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.26.1"
+  }
+}

@@ -1,0 +1,15 @@
+.Paragraph {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+// space successive paragraphs
+.Paragraph + .Paragraph {
+  padding-top: 1rem;
+}
+
+// space successive compact paragraphs
+.Paragraph--compact + .Paragraph--compact {
+  padding-top: 0.2rem;
+}

@@ -1,0 +1,14 @@
+.DS_STORE
+
+/dist/
+node_modules
+.rpt2_cache
+.cache
+.env
+
+# Ignore npm/yarn debug log
+npm-debug.log
+yarn-error.log
+
+# storybook
+.out
