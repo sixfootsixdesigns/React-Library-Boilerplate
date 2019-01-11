@@ -1,3 +1,11 @@
-#React Typescript Boilerplate
+# React Library Boilerplate
 
-Uses React, Typescript, SCSS, Rollup, and Storybook
+This react library boilerplate uses the following:
+
+- Typescript
+- Rollup
+- Prettier
+- Storybook
+- SCSS
+- Jest
+- React Testing Library
