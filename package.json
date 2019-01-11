@@ -36,11 +36,6 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-storysource": "^4.1.4",
     "@storybook/react": "^4.1.4",
@@ -49,18 +44,11 @@
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
-    "@types/react-test-renderer": "^16.0.3",
     "@types/storybook__react": "^4.0.0",
     "awesome-typescript-loader": "^5.2.1",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "babel-loader": "^8.0.0-beta.6",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-plugin-transform-export-extensions": "^6.22.0",
     "css-loader": "^1.0.1",
     "jest": "^23.6.0",
     "node-sass": "^4.10.0",
-    "react-test-renderer": "^16.6.3",
     "react-testing-library": "^5.3.0",
     "rollup": "^0.68.0",
     "rollup-plugin-commonjs": "^9.2.0",
@@ -74,7 +62,6 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.1.6",
-    "webpack": "^4.26.1"
+    "typescript": "^3.1.6"
   }
 }

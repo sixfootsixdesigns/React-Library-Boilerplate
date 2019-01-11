@@ -15,6 +15,7 @@ module.exports = (baseConfig, env, config) => {
     include: path.resolve(__dirname, '../')
   });
 
+  // storysource
   config.module.rules.push({
     test: /\.stories\.(ts|tsx)?$/,
     loaders: [

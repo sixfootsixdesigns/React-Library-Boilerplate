@@ -11,8 +11,7 @@ module.exports = {
     "tsx",
     "js",
     "jsx",
-    "json",
-    "node"
+    "json"
   ],
   "moduleNameMapper": {
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"

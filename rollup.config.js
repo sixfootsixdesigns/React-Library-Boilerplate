@@ -32,6 +32,7 @@ export default {
       declaration: true,
       exclude: [
         './src/**/*.spec.*',
+        './src/**/*.test.*',
         './src/**/*.stories.*'
       ]
     }),
