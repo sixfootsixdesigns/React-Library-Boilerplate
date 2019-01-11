@@ -14,14 +14,16 @@
     "url": "git+https://github.com/sixfootsixdesigns/React-Library-Boilerplate.git"
   },
   "scripts": {
+    "build": "yarn build:setup; rollup -c",
+    "build:setup": "./scripts/build-setup.sh",
     "dev": "yarn storybook:local",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "lint": "tslint --project .",
+    "storybook:local": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --silent",
     "test:watch": "jest --watch",
-    "test:update": "jest -u",
-    "storybook:local": "start-storybook -p 9001 -s ./src/assets -c .storybook",
-    "lint": "tslint --project .",
-    "build": "yarn build:setup; rollup -c",
-    "build:setup": "./scripts/build-setup.sh"
+    "test:update": "jest -u"
   },
   "main": "lib.cjs.js",
   "module": "lib.esm.js",
@@ -49,6 +51,7 @@
     "css-loader": "^1.0.1",
     "jest": "^23.6.0",
     "node-sass": "^4.10.0",
+    "prettier": "^1.15.3",
     "react-testing-library": "^5.3.0",
     "rollup": "^0.68.0",
     "rollup-plugin-commonjs": "^9.2.0",

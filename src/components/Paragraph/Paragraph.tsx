@@ -10,12 +10,7 @@ export interface ParagraphProps {
 
 export class Paragraph extends React.PureComponent<ParagraphProps> {
   public render() {
-    const {
-      compact,
-      className,
-      children,
-      ...rest
-    } = this.props;
+    const { compact, className, children, ...rest } = this.props;
 
     const classes = classNames(
       'Paragraph',
@@ -24,10 +19,8 @@ export class Paragraph extends React.PureComponent<ParagraphProps> {
     );
 
     return (
-      <p
-        {...rest}
-        className={classes}>
-          {children}
+      <p {...rest} className={classes}>
+        {children}
       </p>
     );
   }
