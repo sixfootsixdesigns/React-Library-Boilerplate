@@ -22,8 +22,8 @@
     "lint": "tslint --project .",
     "storybook:local": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --silent",
-    "test:watch": "jest --watch",
-    "test:update": "jest -u"
+    "test:update": "jest -u",
+    "test:watch": "jest --watch"
   },
   "main": "lib.cjs.js",
   "module": "lib.esm.js",
