@@ -1,19 +1,16 @@
 module.exports = {
-  "roots": [
-    "<rootDir>/src"
-  ],
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "ts-jest",
+    "^.+\\.(css|scss|sass)$": "<rootDir>/config/jest/styleMock.js"
   },
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  "moduleFileExtensions": [
+  testMatch: [
+    "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+  ],
+  moduleFileExtensions: [
     "ts",
     "tsx",
     "js",
-    "jsx",
-    "json"
-  ],
-  "moduleNameMapper": {
-    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
-  }
+    "jsx"
+  ]
 }

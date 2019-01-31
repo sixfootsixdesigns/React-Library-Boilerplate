@@ -1,0 +1,5 @@
+xmodule.exports = {
+  process() {
+    return ''
+  }
+}

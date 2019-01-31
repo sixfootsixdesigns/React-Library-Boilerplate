@@ -7,12 +7,14 @@ import pkg from './package.json';
 import autoprefixer from 'autoprefixer';
 
 const globalLibs = {
-  "classnames": "classnames",
-  "react": "React"
+  'classnames': 'classnames',
+  'react': 'React',
+  'react-dom': 'reactDom'
 };
 const externalLibs = [
   'classnames',
-  'react'
+  'react',
+  'react-dom'
 ];
 
 export default {
@@ -42,20 +44,20 @@ export default {
       inputFile: './package.json',
       outputFolder: './dist',
       baseContents: {
-        "name": pkg.name,
-        "version": pkg.version,
-        "description": pkg.description,
-        "author": pkg.author,
-        "homepage": pkg.homepage,
-        "license": pkg.license,
-        "repository": pkg.repository,
-        "bugs": pkg.bugs,
-        "private": false,
-        "main": pkg.main,
-        "module": pkg.module,
-        "browser": pkg.browser,
-        "types": pkg.types,
-        "peerDependencies": pkg.peerDependencies
+        'name': pkg.name,
+        'version': pkg.version,
+        'description': pkg.description,
+        'author': pkg.author,
+        'homepage': pkg.homepage,
+        'license': pkg.license,
+        'repository': pkg.repository,
+        'bugs': pkg.bugs,
+        'private': false,
+        'main': pkg.main,
+        'module': pkg.module,
+        'browser': pkg.browser,
+        'types': pkg.types,
+        'peerDependencies': pkg.peerDependencies
       }
     })
   ]
