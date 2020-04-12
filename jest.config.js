@@ -9,6 +9,7 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
+    'dist/',
     '<rootDir>/src/index.ts',
     '<rootDir>/src/components/index.ts',
   ],

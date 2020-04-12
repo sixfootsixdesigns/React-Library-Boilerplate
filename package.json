@@ -14,7 +14,7 @@
     "url": "git+https://github.com/sixfootsixdesigns/React-Library-Boilerplate.git"
   },
   "scripts": {
-    "build": "clean; rollup -c; yarn postBuild",
+    "build": "yarn clean; rollup -c; yarn postBuild",
     "postBuild": "node ./scripts/postBuild",
     "clean": "rimraf dist",
     "dev": "yarn storybook",
@@ -30,6 +30,7 @@
   "main": "lib.cjs.js",
   "module": "lib.esm.js",
   "browser": "lib.umd.js",
+  "types": "index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.13.1",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.18",
     "@testing-library/react": "^10.0.2",
@@ -64,7 +66,7 @@
     "rollup": "^2.6.0",
     "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27",
+    "rollup-plugin-typescript2": "^0.27.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "stylelint": "^13.3.2",
