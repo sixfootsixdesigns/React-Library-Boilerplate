@@ -1,16 +1,27 @@
 module.exports = {
+  preset: 'ts-jest/presets/js-with-ts',
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "ts-jest",
-    "^.+\\.(css|scss|sass)$": "<rootDir>/config/jest/styleMock.js"
+    '^.+\\.(css|scss|sass)$': '<rootDir>/config/jest/styleMock.js',
   },
   testMatch: [
-    "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-    "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}',
   ],
-  moduleFileExtensions: [
-    "ts",
-    "tsx",
-    "js",
-    "jsx"
-  ]
-}
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/src/index.ts',
+    '<rootDir>/src/components/index.ts',
+  ],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.{js,ts,tsx,jsx}',
+    '!<rootDir>/src/**/*.stories.*',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+  },
+};

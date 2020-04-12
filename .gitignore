@@ -4,7 +4,9 @@
 node_modules
 .rpt2_cache
 .cache
-.env
+.env*
+
+/coverage
 
 # Ignore npm/yarn debug log
 npm-debug.log

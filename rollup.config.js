@@ -1,64 +1,35 @@
 import typescript from 'rollup-plugin-typescript2';
-import packageJson from 'rollup-plugin-generate-package-json';
-import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json';
-import autoprefixer from 'autoprefixer';
+import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
 
-const globalLibs = {
-  'classnames': 'classnames',
-  'react': 'React',
-  'react-dom': 'reactDom'
+const globals = {
+  classnames: 'classnames',
+  react: 'React',
 };
-const externalLibs = [
-  'classnames',
-  'react',
-  'react-dom'
-];
 
 export default {
   input: './src/index.ts',
-  external: externalLibs,
+  external: {
+    ...Object.keys(pkg.dependencies || {}),
+  },
   output: [
-    { name: 'lib', globals: globalLibs, file: `./dist/${pkg.browser}`, format: 'umd' },
-    { name: 'lib', globals: globalLibs, file: `./dist/${pkg.main}`, format: 'cjs' },
-    { name: 'lib', globals: globalLibs, file: `./dist/${pkg.module}`, format: 'es' }
+    {
+      file: `./dist/${pkg.main}`,
+      format: 'cjs',
+      globals,
+    },
+    {
+      file: `./dist/${pkg.module}`,
+      format: 'es',
+      globals,
+    },
+    {
+      file: `./dist/${pkg.browser}`,
+      format: 'iife',
+      name: 'lib',
+      globals,
+    },
   ],
-  plugins: [
-    postcss({
-      modules: false,
-      plugins: [autoprefixer()]
-    }),
-    resolve(),
-    commonjs(),
-    typescript({
-      declaration: true,
-      exclude: [
-        './src/**/*.spec.*',
-        './src/**/*.test.*',
-        './src/**/*.stories.*'
-      ]
-    }),
-    packageJson({
-      inputFile: './package.json',
-      outputFolder: './dist',
-      baseContents: {
-        'name': pkg.name,
-        'version': pkg.version,
-        'description': pkg.description,
-        'author': pkg.author,
-        'homepage': pkg.homepage,
-        'license': pkg.license,
-        'repository': pkg.repository,
-        'bugs': pkg.bugs,
-        'private': false,
-        'main': pkg.main,
-        'module': pkg.module,
-        'browser': pkg.browser,
-        'types': pkg.types,
-        'peerDependencies': pkg.peerDependencies
-      }
-    })
-  ]
+  plugins: [postcss(), typescript(), terser()],
 };

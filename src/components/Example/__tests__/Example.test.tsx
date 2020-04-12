@@ -1,6 +1,6 @@
 import React from 'react';
-import { Example } from '../Example';
-import { render } from 'react-testing-library';
+import { Example } from '..';
+import { render } from '@testing-library/react';
 
 describe('Example Component', () => {
   it('Example renders', () => {

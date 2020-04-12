@@ -1,5 +1,5 @@
-xmodule.exports = {
+module.exports = {
   process() {
-    return ''
-  }
-}
+    return '';
+  },
+};
