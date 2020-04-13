@@ -25,6 +25,7 @@
     "lint:style": "stylelint src",
     "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --maxWorkers=2",
+    "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2"
   },
   "main": "lib.cjs.js",
@@ -37,7 +38,8 @@
     "react-dom": "^16.13.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.13.1",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import './example.scss';
 
 export interface ExampleProps {
@@ -13,7 +13,7 @@ export class Example extends React.PureComponent<ExampleProps> {
   public render() {
     const { active, disabled, className, children, ...rest } = this.props;
 
-    const classes = classNames(
+    const classes = classnames(
       'Example',
       active && `Example--active`,
       disabled && `Example--disabled`,
