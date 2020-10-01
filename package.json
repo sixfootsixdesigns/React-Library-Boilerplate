@@ -21,7 +21,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "lint": "yarn lint:script && yarn lint:style",
-    "lint:script": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "lint:script": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint src",
     "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --maxWorkers=2",
