@@ -36,5 +36,5 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [commonjs(), postcss(), typescript(), terser()],
+  plugins: [commonjs(), postcss(), typescript({tsconfig: 'tsconfig.build.json'}), terser()],
 };

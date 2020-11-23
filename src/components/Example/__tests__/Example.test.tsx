@@ -10,11 +10,6 @@ describe('Example Component', () => {
     expect(node!.className).toEqual('Example');
   });
 
-  it('Matches snapshot', () => {
-    const { container } = render(<Example />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   it('Example active renders', () => {
     const { container } = render(<Example active />);
 

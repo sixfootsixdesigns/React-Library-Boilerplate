@@ -9,21 +9,23 @@ export interface ExampleProps {
   className?: string;
 }
 
-export class Example extends React.PureComponent<ExampleProps> {
-  public render() {
-    const { active, disabled, className, children, ...rest } = this.props;
+export const Example: React.FC<ExampleProps> = ({
+  active,
+  disabled,
+  className,
+  children,
+  ...rest
+}) => {
+  const classes = classnames(
+    'Example',
+    active && `Example--active`,
+    disabled && `Example--disabled`,
+    className
+  );
 
-    const classes = classnames(
-      'Example',
-      active && `Example--active`,
-      disabled && `Example--disabled`,
-      className
-    );
-
-    return (
-      <button {...rest} className={classes}>
-        {children}
-      </button>
-    );
-  }
-}
+  return (
+    <button {...rest} className={classes}>
+      {children}
+    </button>
+  );
+};
