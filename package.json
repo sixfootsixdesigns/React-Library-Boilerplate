@@ -32,7 +32,7 @@
   "module": "lib.esm.js",
   "browser": "lib.umd.js",
   "types": "index.d.ts",
-  "peerDependencies": {
+  "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.14.0"
   },
