@@ -1,0 +1,51 @@
+name: CI
+
+on: push
+
+env: 
+  NPM_TOKEN: ${{ secrets.DEVOPS_ALL_NPM_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Restore node modules cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Dependencies
+        run: yarn install
+      - name: Lint code
+        run: yarn lint
+      - name: Test code
+        run: yarn test
+  
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Release
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: npx semantic-release
+      - name: Release Dry Run
+        if: ${{ github.ref != 'refs/heads/master' }}
+        run: npx semantic-release --dryRun=true
+

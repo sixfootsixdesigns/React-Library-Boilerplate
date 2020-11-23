@@ -11,10 +11,7 @@ const globals = {
 
 export default {
   input: './src/index.ts',
-  external: [
-    ...Object.keys(pkg.dependencies),
-    ...Object.keys(pkg.devDependencies),
-  ],
+  external: [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)],
   output: [
     {
       file: `./dist/${pkg.main}`,
@@ -36,5 +33,5 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [commonjs(), postcss(), typescript({tsconfig: 'tsconfig.build.json'}), terser()],
+  plugins: [commonjs(), postcss(), typescript({ tsconfig: 'tsconfig.build.json' }), terser()],
 };
