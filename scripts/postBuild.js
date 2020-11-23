@@ -5,6 +5,6 @@ const pkg = require('../package.json');
   fs.copyFileSync('LICENSE', './dist/LICENSE');
   fs.copyFileSync('README.md', './dist/README.md');
   // pull off some things we don't want in the final package.json
-  const { scripts, devDependencies, engines, ...rest } = pkg;
+  const { scripts, devDependencies, husky, engines, ...rest } = pkg;
   fs.writeFileSync('./dist/package.json', JSON.stringify(rest, null, 2));
 })();
