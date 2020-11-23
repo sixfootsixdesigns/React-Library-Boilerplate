@@ -12,6 +12,7 @@ This react library boilerplate uses the following:
 - Jest
 - React Testing Library
 - [Semantic-Release](https://semantic-release.gitbook.io/)
+- Github Actions
 
 ## Setup
 
@@ -114,6 +115,10 @@ $ yarn build
 ```
 
 The build output will go into the `dist` directory
+
+## Github Actions
+
+This project contains a github action workflow called `ci.yaml`. This workflow runs a job that will test, lint, and build the code. If the code passes and you are on the `master` branch it will also run the publish job to send the new version off to npm.
 
 ## Publishing your Library on NPM
 

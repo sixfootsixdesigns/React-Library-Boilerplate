@@ -7,7 +7,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  test:
+  test-lint-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,11 +25,14 @@ jobs:
         run: yarn install
       - name: Lint code
         run: yarn lint
-      - name: Test code
-        run: yarn test
-  
+      - name: Test code with coverage
+        run: yarn test:coverage
+      - name: Build
+        run: yarn build
+
   publish:
-    needs: test
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: test-lint-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -47,10 +50,5 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
-      - name: Release
-        if: ${{ github.ref == 'refs/heads/master' }}
+      - name: Release if Master
         run: npx semantic-release
-      - name: Release Dry Run
-        if: ${{ github.ref != 'refs/heads/master' }}
-        run: npx semantic-release --dryRun=true
-
