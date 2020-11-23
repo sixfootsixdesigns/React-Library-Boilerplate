@@ -45,6 +45,7 @@
     "@babel/core": "^7.12.7",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@semantic-release/npm": "^7.0.8",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@storybook/react": "^6.1.2",
     "@testing-library/react": "^11.2.2",
     "@types/classnames": "^2.2.11",

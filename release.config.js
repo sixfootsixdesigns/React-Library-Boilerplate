@@ -8,7 +8,12 @@ module.exports = {
         preset: 'eslint',
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'eslint',
+      },
+    ],
     [
       '@semantic-release/npm',
       {
