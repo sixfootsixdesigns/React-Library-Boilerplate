@@ -14,8 +14,7 @@
     "url": "git+https://github.com/sixfootsixdesigns/React-Library-Boilerplate.git"
   },
   "scripts": {
-    "build": "yarn clean; rollup -c; yarn postBuild",
-    "postBuild": "node ./scripts/postBuild",
+    "build": "yarn clean; rollup -c",
     "clean": "rimraf dist",
     "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
@@ -33,14 +32,18 @@
   "browser": "lib.umd.js",
   "types": "index.d.ts",
   "dependencies": {
-    "classnames": "^2.2.6",
-    "react": "^16.14.0"
+    "classnames": "^2.2.6"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/npm": "^7.0.8",
     "@semantic-release/release-notes-generator": "^9.0.1",
@@ -71,6 +74,8 @@
     "react-dom": "^16.14.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.33.3",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
