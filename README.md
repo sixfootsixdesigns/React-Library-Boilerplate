@@ -64,7 +64,7 @@ export * from './MyComponent';
 export * from './SomeOtherComponent';
 ```
 
-You can develope your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `yarn storybook` to start the service.
+You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `yarn storybook` to start the service.
 
 ## Tests
 
