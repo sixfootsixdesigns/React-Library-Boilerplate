@@ -1,8 +1,5 @@
 module.exports = {
   preset: 'ts-jest/presets/js-with-ts',
-  transform: {
-    '^.+\\.(css|scss|sass)$': '<rootDir>/mocks/styleMock.js',
-  },
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
     '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}',
@@ -13,10 +10,10 @@ module.exports = {
     '<rootDir>/src/index.ts',
     '<rootDir>/src/components/index.ts',
   ],
-  collectCoverageFrom: [
-    '<rootDir>/src/**/*.{js,ts,tsx,jsx}',
-    '!<rootDir>/src/**/*.stories.*',
-  ],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,ts,tsx,jsx}', '!<rootDir>/src/**/*.stories.*'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+  },
   coverageThreshold: {
     global: {
       branches: 90,
