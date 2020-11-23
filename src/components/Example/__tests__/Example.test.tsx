@@ -32,7 +32,7 @@ describe('Example Component', () => {
   });
 
   it('Example extra classNames render', () => {
-    const { container } = render(<Example className="foo" />);
+    const { container } = render(<Example className='foo' />);
 
     const node = container.querySelector('button.Example');
     expect(node!.className).toEqual('Example foo');

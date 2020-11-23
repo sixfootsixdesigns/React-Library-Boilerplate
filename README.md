@@ -11,7 +11,7 @@ This react library boilerplate uses the following:
 - SCSS
 - Jest
 - React Testing Library
-- [Semantic-Release](https://semantic-release.gitbook.io/)
+- [Semantic Release](https://semantic-release.gitbook.io/)
 - Github Actions
 
 ## Setup
