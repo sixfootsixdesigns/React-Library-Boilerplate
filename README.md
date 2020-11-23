@@ -24,7 +24,6 @@ This react library boilerplate uses the following:
 
 ```
 ├── .storybook
-├── scripts
 ├── src
 │   ├── components
 |   |   ├── Example
