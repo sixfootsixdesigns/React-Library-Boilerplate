@@ -18,6 +18,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'prettier/@typescript-eslint',
+    'eslint-config-prettier',
   ],
   rules: {
     '@typescript-eslint/camelcase': rules.OFF,

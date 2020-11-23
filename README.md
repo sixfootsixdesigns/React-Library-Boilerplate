@@ -11,7 +11,7 @@ This react library boilerplate uses the following:
 - SCSS
 - Jest
 - React Testing Library
-- [Semantic-Release](https://semantic-release.gitbook.io/)
+- [Semantic Release](https://semantic-release.gitbook.io/)
 - Github Actions
 
 ## Setup
@@ -122,7 +122,7 @@ This project contains a github action workflow called `ci.yaml`. This workflow r
 
 ## Publishing your Library on NPM
 
-Once you have created an account on NPM create a publish key and add it to your github secrets as `NPM_TOKEN` [Semantic Release](https://semantic-release.gitbook.io/) will take care of the publishing and versioning for you via the `.github/workflows/ci.yaml` `Publish` job.
+Once you have created an account on NPM create a publish key and add it to your github secrets as `NPM_TOKEN` [Semantic Release](https://semantic-release.gitbook.io/) will take care of the publishing and versioning for you via the `.github/workflows/ci.yaml` `Publish` job. In addition to publishing to NPM it will also create a new tag and release with commit messages in the repo.
 
 > Note: You will need to update the package.json name property with the correct name your library will be using on npm.
 
