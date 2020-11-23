@@ -53,6 +53,7 @@
     "@typescript-eslint/parser": "^4.8.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
+    "conventional-changelog-eslint": "^3.0.9",
     "css-loader": "^5.0.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
