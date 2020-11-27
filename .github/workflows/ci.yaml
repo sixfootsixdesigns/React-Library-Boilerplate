@@ -41,7 +41,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          persist-credentials: false
           token: ${{ secrets.TOKEN }}
       - uses: actions/setup-node@v1
         with:
