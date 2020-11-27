@@ -5,7 +5,6 @@ on: push
 env: 
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  PUBLISH_BRANCH: refs/heads/master
 
 jobs:
   test-lint-build:
@@ -32,7 +31,7 @@ jobs:
         run: yarn build
 
   publish:
-    if: ${{ github.ref == env.PUBLISH_BRANCH }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     needs: test-lint-build
     runs-on: ubuntu-latest
     steps:
