@@ -121,7 +121,7 @@ This project contains a github action workflow called `ci.yaml`. This workflow r
 
 ## Publishing your Library on NPM
 
-Once you have created an account on NPM create a publish key and add it to your github secrets as `NPM_TOKEN` [Semantic Release](https://semantic-release.gitbook.io/) will take care of the publishing and versioning for you via the `.github/workflows/ci.yaml` `Publish` job. In addition to publishing to NPM it will also create a new tag and release with commit messages in the repo.
+Once you have created an account on NPM create a publish key and add it to your github secrets as `NPM_TOKEN`. You will also need to create another secret called `SEMANTIC_RELEASE_TOKEN`. This token should be a personal access token that has the following scopes: `repo(all)`. [Semantic Release](https://semantic-release.gitbook.io/) will take care of the publishing and versioning for you via the `.github/workflows/ci.yaml` `Publish` job. In addition to publishing to NPM it will also create a new tag and release with commit messages in the repo.
 
 > Note: You will need to update the package.json name property with the correct name your library will be using on npm.
 
