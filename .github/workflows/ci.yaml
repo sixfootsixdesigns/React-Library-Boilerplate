@@ -31,7 +31,7 @@ jobs:
         run: yarn build
 
   publish:
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/masterd' }}
     needs: test-lint-build
     runs-on: ubuntu-latest
     steps:
@@ -50,5 +50,5 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
-      - name: Release if Master
+      - name: Release
         run: npx semantic-release
