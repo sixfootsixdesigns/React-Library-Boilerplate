@@ -18,12 +18,19 @@ module.exports = {
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md',
+        changelogTitle: 'Changelog',
       },
     ],
     [
       '@semantic-release/npm',
       {
         pkgRoot: 'dist',
+      },
+    ],
+    [
+      '@semantic-release/git',
+      {
+        assets: ['CHANGELOG.md'],
       },
     ],
   ],
