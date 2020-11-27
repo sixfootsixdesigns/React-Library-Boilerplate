@@ -3,39 +3,56 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
+import ts from 'typescript';
 
 export default {
   input: './src/index.ts',
+  external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   output: [
-    {
-      file: `./dist/${pkg.main}`,
-      format: 'cjs',
-      sourcemap: true,
-    },
     {
       file: `./dist/${pkg.module}`,
       format: 'es',
       sourcemap: true,
     },
     {
-      file: `./dist/${pkg.browser}`,
-      format: 'iife',
-      name: 'lib',
+      file: `./dist/${pkg.main}`,
+      format: 'cjs',
       sourcemap: true,
     },
   ],
   plugins: [
-    peerDepsExternal({
-      includeDependencies: true,
-    }),
     resolve(),
     commonjs(),
     postcss(),
-    typescript({ tsconfig: 'tsconfig.build.json' }),
-    terser(),
+    typescript({
+      typescript: ts,
+      tsconfig: 'tsconfig.json',
+      tsconfigDefaults: {
+        exclude: [
+          '**/*.spec.ts',
+          '**/*.test.ts',
+          '**/*.stories.ts',
+          '**/*.spec.tsx',
+          '**/*.test.tsx',
+          '**/*.stories.tsx',
+          'node_modules',
+          'bower_components',
+          'jspm_packages',
+          'dist',
+        ],
+        compilerOptions: {
+          sourceMap: true,
+          declaration: true,
+        },
+      },
+    }),
+    terser({
+      output: {
+        comments: false,
+      },
+    }),
     copy({
       targets: [
         { src: 'LICENSE', dest: 'dist' },
