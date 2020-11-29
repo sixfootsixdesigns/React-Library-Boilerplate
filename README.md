@@ -2,17 +2,18 @@
 
 This react library boilerplate uses the following:
 
-- Typescript
-- Rollup
-- Prettier
-- ESLint
-- StyleLint
-- Storybook
-- SCSS
-- Jest
-- React Testing Library
+- [Typescript](https://www.typescriptlang.org/)
+- [Rollup](https://rollupjs.org/guide/en/)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+- [StyleLint](https://stylelint.io/)
+- [Storybook](https://storybook.js.org/)
+- [SCSS](https://sass-lang.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Semantic Release](https://semantic-release.gitbook.io/)
-- Github Actions
+- [Github Actions](https://github.com/features/actions)
+- [Hygen](https://www.hygen.io/)
 
 ## Setup
 
@@ -42,7 +43,8 @@ This react library boilerplate uses the following:
 
 ## Add a new component
 
-- add the new component directory in the `src/components` directory following this folder structure
+- You can automatically create a new component using the `yarn component:new` command.
+- Or, you can manually add the new component directory in the `src/components` directory following this folder structure
 
 ```
 ├── MyComponent
@@ -59,58 +61,77 @@ Once you have created your new component make sure you have exported it in the `
 
 ```
 // src/components/index.ts
-export * from './MyComponent';
-export * from './SomeOtherComponent';
+export \* from './MyComponent';
+export \* from './SomeOtherComponent';
+
 ```
+
+> You can skip all of this and use the built in component generator. The template for the component is in `_templates/component/with-prompt`. Simply run the following command to automatically create your new component. It will prompt you for the component name and then build out all the files and correct exports.`yarn component:new`
 
 You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `yarn storybook` to start the service.
 
 ## Tests
 
 ```
+
 $ yarn test
+
 ```
 
 With coverage
 
 ```
+
 $ yarn test:coverage
+
 ```
 
 Watch
 
 ```
+
 $ yarn test:watch
+
 ```
 
 ## Prettier
 
 ```
+
 $ yarn format
+
 ```
 
 Validate project formatting
 
 ```
+
 $ yarn format:check
+
 ```
 
 ## Lint
 
 ```
+
 $ yarn lint
+
 ```
 
 ## Storybook
 
 ```
+
 $ yarn storybook
+
 ```
 
 ## Building your library
 
 ```
+
 $ yarn build
+
 ```
 
 The build output will go into the `dist` directory
@@ -134,11 +155,13 @@ The Conventional Commits specification is a lightweight convention on top of com
 The commit message should be structured as follows:
 
 ```
+
 <type>[optional scope]: <description>
 
 [optional body]
 
 [optional footer(s)]
+
 ```
 
 The commit contains the following structural elements, to communicate intent to the consumers of your library:
@@ -151,51 +174,4 @@ The commit contains the following structural elements, to communicate intent to 
 
 Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in semantic versioning (unless they include a BREAKING CHANGE). A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., `feat(parser): add ability to parse arrays.`
 
-#### Examples
-
-##### Commit message with description and breaking change footer
-
-```
-feat: allow provided config object to extend other configs
-
-BREAKING CHANGE: `extends` key in config file is now used for extending other config files
-```
-
-##### Commit message with ! to draw attention to breaking change
-
-```
-refactor!: drop support for Node 6
-```
-
-##### Commit message with both ! and BREAKING CHANGE footer
-
-```
-refactor!: drop support for Node 6
-
-BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
-```
-
-##### Commit message with no body
-
-```
-docs: correct spelling of CHANGELOG
-```
-
-##### Commit message with scope
-
-```
-feat(lang): add polish language
-```
-
-##### Commit message with multi-paragraph body and multiple footers
-
-```
-fix: correct minor typos in code
-
-see the issue for details
-
-on typos fixed.
-
-Reviewed-by: Z
-Refs #133
-```
+[Examples](https://www.conventionalcommits.org/en/v1.0.0/#examples)
