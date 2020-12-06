@@ -27,7 +27,8 @@
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "hygen": "hygen",
-    "component:new": "hygen component with-prompt"
+    "component:new": "hygen component with-prompt",
+    "publish": "npx semantic-release --no-ci"
   },
   "main": "index.js",
   "module": "index.esm.js",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
