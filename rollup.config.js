@@ -61,7 +61,7 @@ export default {
           src: 'package.json',
           dest: 'dist',
           transform: (content) => {
-            const { scripts, devDependencies, husky, engines, ...keep } = JSON.parse(
+            const { scripts, devDependencies, husky, release, engines, ...keep } = JSON.parse(
               content.toString()
             );
             return JSON.stringify(keep, null, 2);
