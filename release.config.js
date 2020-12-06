@@ -5,7 +5,7 @@ module.exports = {
     [
       '@semantic-release/commit-analyzer',
       {
-        //preset: 'conventionalcommits',
+        preset: 'conventionalcommits',
         releaseRules: [
           { type: 'chore', release: 'patch' },
           { type: 'docs', release: false },
@@ -21,7 +21,7 @@ module.exports = {
     [
       '@semantic-release/release-notes-generator',
       {
-        //preset: 'conventionalcommits',
+        preset: 'conventionalcommits',
       },
     ],
     [
