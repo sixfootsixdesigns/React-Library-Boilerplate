@@ -211,4 +211,12 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 
 ## Changelog
 
-The change log is automatically generated with these three sections: new features, bug fixes, breaking changes. These are created using any commits of type `feat`, `fix`, and breaking changes.
+The changelog.md is automatically generated from the following types of commits:
+
+- `feat`
+- `fix`
+- `perf`
+
+In addition to these types any `breaking change` will also be added to the changelog.
+
+The commit contains the following structural elements, to communicate intent to the consumers of your library:
