@@ -168,15 +168,14 @@ to read on GitHub as well as in various git tools.
 Must be one of the following:
 
 - **build**: Changes that affect the build system or external dependencies (this correlates with `PATCH` in semantic versioning)
-- **chore**: Changes that affect the build system or external dependencies
-- **ci**: Changes to our CI configuration files and scripts
-- **docs**: Documentation only changes
+- **ci**: Changes to our CI configuration files and scripts (no version changes)
+- **docs**: Documentation only changes (no version changes)
 - **feat**: A new feature (this correlates with `MINOR` in semantic versioning).
 - **fix**: A bug fix (this correlates with `PATCH` in semantic versioning).
 - **perf**: A code change that improves performance (this correlates with `PATCH` in semantic versioning).
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **test**: Adding missing tests or correcting existing tests
+- **refactor**: A code change that neither fixes a bug nor adds a feature (no version changes)
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) (no version changes)
+- **test**: Adding missing tests or correcting existing tests (no version changes)
 - **revert**: Reverts a previous commit (this correlates with `PATCH` in semantic versioning).
 
 #### Description
@@ -218,6 +217,4 @@ The changelog.md is automatically generated from the following types of commits:
 - `perf`
 - `revert`
 
-In addition to these types any `breaking change` will also be added to the changelog.
-
-The commit contains the following structural elements, to communicate intent to the consumers of your library:
+In addition to these types, any `breaking change` will also be added to the changelog.
