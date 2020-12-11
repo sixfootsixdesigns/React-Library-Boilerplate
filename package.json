@@ -115,7 +115,7 @@
         {
           "releaseRules": [
             {
-              "revert": true,
+              "tag": "revert",
               "release": "patch"
             }
           ]
