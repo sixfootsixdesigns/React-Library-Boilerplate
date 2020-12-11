@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.1...v2.1.2) (2020-12-11)
+
+
+### Performance Improvements
+
+* some perfomance things ([b77e965](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/commit/b77e965bc9743cdb41e9c288759a8fdabebf07cf))
+
 ### [2.1.1](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.0...v2.1.1) (2020-12-06)
 
 
