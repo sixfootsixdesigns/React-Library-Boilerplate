@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.4...v3.0.0) (2020-12-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* this is testing that
+
+### Miscellaneous Chores
+
+* foo ([c3d9fc0](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/commit/c3d9fc0ea8a12cdb0358d67034ca0c7917022f8f))
+
 ### [2.1.4](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.3...v2.1.4) (2020-12-11)
 
 ### [2.1.3](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.2...v2.1.3) (2020-12-11)
