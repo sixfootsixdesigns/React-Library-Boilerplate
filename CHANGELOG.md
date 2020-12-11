@@ -1,5 +1,7 @@
 # Changelog
 
+### [2.1.4](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.3...v2.1.4) (2020-12-11)
+
 ### [2.1.3](https://github.com/sixfootsixdesigns/React-Library-Boilerplate/compare/v2.1.2...v2.1.3) (2020-12-11)
 
 
