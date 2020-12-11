@@ -167,8 +167,8 @@ to read on GitHub as well as in various git tools.
 
 Must be one of the following:
 
-- **build**: Changes that affect the build system or external dependencies
-- **chore**: same as `build` type.
+- **build**: Changes that affect the build system or external dependencies (this correlates with `PATCH` in semantic versioning)
+- **chore**: Changes that affect the build system or external dependencies
 - **ci**: Changes to our CI configuration files and scripts
 - **docs**: Documentation only changes
 - **feat**: A new feature (this correlates with `MINOR` in semantic versioning).
@@ -216,6 +216,7 @@ The changelog.md is automatically generated from the following types of commits:
 - `feat`
 - `fix`
 - `perf`
+- `revert`
 
 In addition to these types any `breaking change` will also be added to the changelog.
 
