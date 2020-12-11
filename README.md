@@ -148,30 +148,67 @@ Once you have created an account on NPM create a publish key and add it to your 
 
 ## Committing Code Changes
 
-The commit messages are critical for allowing the [Semantic Releases](https://semantic-release.gitbook.io/) to work correctly. We use the [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) commit message format. This is a small excerpt from the main docs:
-
-The Conventional Commits specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
+The commit messages are critical for allowing the [Semantic Releases](https://semantic-release.gitbook.io/) to work correctly. We use the [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) commit message format.
 
 The commit message should be structured as follows:
 
 ```
-
 <type>[optional scope]: <description>
 
 [optional body]
 
 [optional footer(s)]
-
 ```
 
-The commit contains the following structural elements, to communicate intent to the consumers of your library:
+Any line of the commit message cannot be longer than 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.
 
-1. **fix**: a commit of the type `fix` patches a bug in your codebase (this correlates with PATCH in semantic versioning).
-2. **feat**: a commit of the type `feat` introduces a new feature to the codebase (this correlates with MINOR in semantic versioning).
-3. **BREAKING CHANGE**: a commit that has a footer `BREAKING CHANGE:`, or appends a `!` after the type/scope, introduces a breaking API change (correlating with MAJOR in semantic versioning). A `BREAKING CHANGE` can be part of commits of any type.
-4. types other than `fix:` and `feat:` are allowed, for example @commitlint/config-conventional (based on the the Angular convention) recommends `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others.
-5. footers other than `BREAKING CHANGE: <description>` may be provided and follow a convention similar to git trailer format.
+#### Type
 
-Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in semantic versioning (unless they include a BREAKING CHANGE). A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., `feat(parser): add ability to parse arrays.`
+Must be one of the following:
 
-[Examples](https://www.conventionalcommits.org/en/v1.0.0/#examples)
+- **build**: Changes that affect the build system or external dependencies
+- **chore**: same as `build` type.
+- **ci**: Changes to our CI configuration files and scripts
+- **docs**: Documentation only changes
+- **feat**: A new feature (this correlates with `MINOR` in semantic versioning).
+- **fix**: A bug fix (this correlates with `PATCH` in semantic versioning).
+- **perf**: A code change that improves performance (this correlates with `PATCH` in semantic versioning).
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **test**: Adding missing tests or correcting existing tests
+- **revert**: Reverts a previous commit (this correlates with `PATCH` in semantic versioning).
+
+#### Description
+
+The Description contains a succinct description of the change:
+
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- don't capitalize the first letter
+- no dot (.) at the end
+
+#### Body (optional)
+
+Use the imperative, present tense: "change" not "changed" nor "changes".
+The body should include the motivation for the change and contrast this with previous behavior.
+
+#### Footer (optional)
+
+The footer should contain any information about **Breaking Changes** and is also the place to
+reference GitHub issues that this commit **Closes**.
+
+### Breaking Changes
+
+A commit that has the text `BREAKING CHANGE:` at the beginning of its optional body or footer section introduces a breaking API change (correlating with `MAJOR` in semantic versioning). A BREAKING CHANGE can be part of commits of any type.
+
+should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+
+### Revert
+
+If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+
+---
+
+## Changelog
+
+The change log is automatically generated with these three sections: new features, bug fixes, breaking changes. These are created using any commits of type `feat`, `fix`, and breaking changes.
